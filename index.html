@@ -1,0 +1,23 @@
+<!DOCTYPE >
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="./tax-calculator.js"></script>
+    <script>
+      function showTax() {
+        const income = document.getElementById("income").value;
+        const tax = calculateTaxAmount(parseInt(income));
+        document.getElementById("tax").innerHTML = tax;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" name="income" id="income" />
+    <button type="button" onclick="showTax()">Calculate Amount</button>
+    <br />
+    <p id="tax"></p>
+  </body>
+</html>
