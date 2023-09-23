@@ -49,6 +49,7 @@ function calculateTaxAmount(income) {
         if (taxableSallary < 1) {
           break;
         }
+        console.log(i);
         let currentSlabIncome = slabs[i+1].income - slabs[i].income;
       // if more than current slab -> calculate only for current slab
       // else calculate on income
@@ -57,6 +58,9 @@ function calculateTaxAmount(income) {
       else calculationAmount = currentSlabIncome;
       totalTax += (calculationAmount * slabs[i+1].taxPercentage) / 100;
       taxableSallary -= currentSlabIncome;
+      if (i === slabs.length - 1 && taxableSallary > 0) {
+        totalTax += (taxableSallary * slabs[(slabs.length - 1)].taxPercentage) / 100;
+      }
       }
     }
   
